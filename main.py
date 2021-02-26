@@ -29,7 +29,7 @@ def setup():
 def main():
     args = setup()
 
-    logging.info("zomb bulk %s" % args)
+    logging.info("json generator %s" % args)
 
     template_data = open(args.template_file).read()
     logging.info("template %s", template_data)
@@ -40,8 +40,8 @@ def main():
         row['now'] = datetime.datetime.utcnow().isoformat() + 'Z'
         logging.info('%d: %s', idx, row)
 
-        zomb = chevron.render(template_data, row)
-        logging.info("%s", zomb)
+        generated_json = chevron.render(template_data, row)
+        logging.info("%s", generated_json)
 
 
 if __name__ == "__main__":

@@ -1,2 +1,2 @@
-# zomb-bulk
+# json generator
 
